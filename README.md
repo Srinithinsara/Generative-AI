@@ -1,3 +1,5 @@
+![Generative Agents — Smallville and connected AI agents](assets/generative-agents-banner.svg)
+
 # Generative Agents: Interactive Simulacra of Human Behavior
 
 A Python reimplementation and experimental extension of the Generative Agents research project. This academic project explores how autonomous agents store and retrieve memories, form plans, reflect on experiences, and interact in a simulated Smallville environment.
