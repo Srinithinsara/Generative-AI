@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" viewBox="0 0 1500 500" role="img" aria-labelledby="title desc">
+<title id="title">Generative Agents — Interactive Simulacra of Human Behavior</title>
+<desc id="desc">A stylized evening town with connected AI memory nodes, representing autonomous agents, memory, planning, and interaction.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#11172f"/><stop offset=".55" stop-color="#24204d"/><stop offset="1" stop-color="#102d46"/>
+  </linearGradient>
+  <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#9b5cf6" stop-opacity=".72"/><stop offset="1" stop-color="#38d6e8" stop-opacity=".28"/>
+  </linearGradient>
+  <linearGradient id="window" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffe7a3"/><stop offset="1" stop-color="#f6a85c"/>
+  </linearGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="neon"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1500" height="500" fill="url(#bg)"/>
+<ellipse cx="1110" cy="245" rx="360" ry="210" fill="#6551c9" opacity=".22" filter="url(#soft)"/>
+<ellipse cx="1260" cy="390" rx="320" ry="130" fill="#13a9c5" opacity=".13" filter="url(#soft)"/>
+<!-- distant skyline -->
+<g fill="#202a4c" stroke="#59648e" stroke-width="2" opacity=".8">
+  <path d="M0 302V204h75v-42h64v140H0z"/><path d="M135 304V184h80v-62h76v182z"/>
+  <path d="M285 305V220h62v-58h95v143z"/><path d="M420 305V180h82v-35h66v160z"/>
+  <path d="M568 305V224h82v-80h62v161z"/><path d="M700 305V190h95v-52h62v167z"/>
+  <path d="M856 305V222h78v-90h73v173z"/><path d="M1000 305V184h98v-50h69v171z"/>
+  <path d="M1165 305V218h82v-72h72v159z"/><path d="M1315 305V180h80v-48h105v173z"/>
+</g>
+<!-- lit windows -->
+<g fill="url(#window)" opacity=".78">
+  <path d="M24 230h13v19H24zm30 0h13v19H54zm0 34h13v19H54zm110-86h16v22h-16zm38 0h16v22h-16zm-38 39h16v22h-16zm92-60h15v22h-15zm34 0h15v22h-15z"/>
+  <path d="M320 244h15v20h-15zm37 0h15v20h-15zm93-48h16v21h-16zm35 0h16v21h-16zm0 39h16v21h-16zm108 13h15v20h-15zm33-89h15v20h-15zm110 55h15v20h-15zm38 0h15v20h-15zm118-81h15v20h-15zm38 0h15v20h-15zm0 37h15v20h-15zm115-31h15v20h-15zm42 0h15v20h-15zm80 94h15v20h-15zm38 0h15v20h-15z"/>
+</g>
+<!-- town green and streets -->
+<path d="M0 348 Q360 285 650 350 T1500 340V500H0z" fill="#162e3b"/>
+<path d="M0 422 Q290 340 560 410 T1070 405 T1500 390" fill="none" stroke="#c3a9ff" stroke-opacity=".18" stroke-width="42"/>
+<path d="M0 422 Q290 340 560 410 T1070 405 T1500 390" fill="none" stroke="#95a5d2" stroke-opacity=".22" stroke-width="3" stroke-dasharray="12 15"/>
+<!-- smallville homes -->
+<g stroke="#111a34" stroke-width="5" stroke-linejoin="round">
+  <path d="M70 370l78-53 78 53v91H70z" fill="#34436b"/><path d="M54 373l94-68 95 68" fill="none" stroke="#b38ae7" stroke-width="7"/>
+  <path d="M95 391h31v34H95zm65 0h31v34h-31z" fill="#ffc87b" stroke="#1a2540" stroke-width="4"/>
+  <path d="M1230 362l82-55 82 55v96h-164z" fill="#31466a"/><path d="M1213 365l99-70 99 70" fill="none" stroke="#62d4e6" stroke-width="7"/>
+  <path d="M1250 388h30v34h-30zm65 0h30v34h-30zm-32 53h30v17h-30z" fill="#ffc87b" stroke="#1a2540" stroke-width="4"/>
+</g>
+<!-- central park -->
+<ellipse cx="780" cy="423" rx="205" ry="45" fill="#284a48" stroke="#66c6b1" stroke-opacity=".55" stroke-width="3"/>
+<ellipse cx="780" cy="414" rx="47" ry="18" fill="#253a62" stroke="#a6d9e7" stroke-width="3"/>
+<path d="M780 398v-28m-15 15 15-15 15 15" stroke="#7be4ef" stroke-width="4" fill="none"/>
+<g fill="#5ba982" stroke="#1b493f" stroke-width="3">
+  <circle cx="630" cy="405" r="24"/><circle cx="920" cy="400" r="25"/><circle cx="720" cy="451" r="18"/><circle cx="862" cy="455" r="19"/>
+</g>
+<g fill="#8bd5b8" opacity=".8">
+  <circle cx="625" cy="396" r="9"/><circle cx="916" cy="391" r="10"/><circle cx="712" cy="445" r="7"/><circle cx="855" cy="448" r="8"/>
+</g>
+<!-- neural paths -->
+<g fill="none" stroke="url(#glow)" stroke-width="3" filter="url(#neon)" opacity=".95">
+  <path d="M170 120 C340 40 480 70 630 126 S920 165 1080 92 S1300 70 1400 135"/>
+  <path d="M215 260 C420 180 510 230 690 180 S1000 235 1160 185"/>
+  <path d="M500 85 C545 170 575 220 630 320"/>
+  <path d="M1090 92 C1060 195 1020 250 940 342"/>
+  <path d="M1400 135 C1330 235 1300 280 1288 350"/>
+</g>
+<g filter="url(#neon)">
+  <g fill="#1b234d" stroke="#8c7cff" stroke-width="4">
+    <circle cx="170" cy="120" r="25"/><circle cx="630" cy="126" r="25"/><circle cx="1080" cy="92" r="25"/><circle cx="1400" cy="135" r="25"/><circle cx="215" cy="260" r="18"/><circle cx="1160" cy="185" r="18"/>
+  </g>
+  <g fill="#9d91ff" font-family="Arial,sans-serif" font-size="20" font-weight="bold" text-anchor="middle">
+    <text x="170" y="127">M</text><text x="630" y="133">R</text><text x="1080" y="99">P</text><text x="1400" y="142">A</text><text x="215" y="267">+</text><text x="1160" y="192">↔</text>
+  </g>
+</g>
+<!-- title panel -->
+<rect x="300" y="155" width="900" height="182" rx="28" fill="#0d1530" fill-opacity=".76" stroke="#8e7bff" stroke-opacity=".5" stroke-width="2"/>
+<text x="750" y="224" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="53" font-weight="700" letter-spacing="3" text-anchor="middle">GENERATIVE AGENTS</text>
+<text x="750" y="272" fill="#c6d5ff" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="600" letter-spacing="1.7" text-anchor="middle">INTERACTIVE SIMULACRA OF HUMAN BEHAVIOR</text>
+<rect x="565" y="293" width="370" height="2" rx="1" fill="url(#glow)"/>
+<text x="750" y="320" fill="#9ee9eb" font-family="Arial,Helvetica,sans-serif" font-size="15" letter-spacing="2.6" text-anchor="middle">AUTONOMOUS AI  ·  MEMORY  ·  PLANNING  ·  INTERACTION</text>
+<text x="42" y="477" fill="#a5b6dc" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="1.4">SENG 5080  ·  GROUP 5  ·  PYTHON / LLM / SIMULATION</text>
+</svg>
