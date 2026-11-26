@@ -201,3 +201,14 @@ The original project is licensed under Apache-2.0. Refer to [NOTICE](NOTICE) and
 ## Project status
 
 Academic project developed as part of SENG 5080. Implementation details and experimental memory changes are documented in this repository.
+## Screenshots
+
+The following screenshots were captured from the local practice/mock replay viewer.
+
+### Smallville environment
+
+![Smallville environment showing agents moving through the simulation](assets/screenshots/smallville-environment.png)
+
+### Agent roster and state details
+
+![Agent roster and state details panel for Abigail Chen](assets/screenshots/agent-roster-and-state.png)
