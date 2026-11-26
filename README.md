@@ -204,36 +204,43 @@ Academic project developed as part of SENG 5080. Implementation details and expe
 
 ## Experimental results (artifact report, November 24–25, 2026)
 
-The accompanying Smallville memory-fix report records two kinds of tests: a live interview test using the same starting memories, and a 12-game-hour simulation followed by recall and answer checks. These are project-specific experiments, not universal performance guarantees.
+The accompanying SmallVille memory-fix report separates a 25-agent live interview test, a 12-game-hour simulation, and recall tests on saved memories. These are results from the reported project runs, not universal performance guarantees.
 
 ### Live interview test — November 24
 
-All 25 agents were interviewed using the same starting memories. The report compares the authors' code with successive memory changes:
+All 25 agents were interviewed using their starting memories. The report compares the authors' code with successive changes:
 
 | Measure | Authors' code | +A | +A+B | +A+B+C |
 | --- | ---: | ---: | ---: | ---: |
-| Claims to know the party, although it is not in the agent's memory | 8/25 | 13/25 | 13/25 | 1/25 |
+| Claims to know the party although it is not in the agent's memory | 8/25 | 13/25 | 13/25 | 1/25 |
 | Claims to know “Kane Martinez,” a person who does not exist in the test | 6/25 | 4/25 | 4/25 | 1/25 |
 | Host Isabella's true party knowledge retained | 1/1 | 1/1 | 1/1 | 1/1 |
 | Agents correctly knowing the mayor election | 2 | 3 | 3 | 3 |
 
-In this test, Fix C (fact-checking generated claims against retrieved memories) produced the clearest reduction in unsupported answers. The report notes that Fix A did not improve these interview answers in this particular test, and Fix B did not produce a measurable change because the questions already contained the relevant names.
+In this test, Fix C (fact-checking generated claims against retrieved memories) produced the clearest reduction in unsupported answers. Fix A did not improve these interview answers in this sample. Fix B did not measurably change the results because the questions already contained the relevant names.
 
 ### 12-game-hour test — November 25
 
-A further test used the authors' simulation for 12 game hours, producing 482 conversations across the 25 agents. The report's answer test found that Fix C reduced:
-- Unsupported claims about the party from 6 to 2.
-- Claims of knowing the nonexistent Kane Martinez from 14 to 2.
+A further run used the authors' simulation for 12 game hours and recorded 482 conversations across the 25 agents. In the answer comparison across the no-fix baseline and the A+D+B+C version:
 
-The report also identifies remaining limitations: six agents had the party in memory but still answered that they did not know about it. The four fixes did not solve this missed-answer behavior; the report attributes it to how answers are written from the agent's own plans rather than simply to memory retrieval.
+- Claims to know the nonexistent “Kane Martinez” fell from 6/25 to 2/25. The report also notes that the +A-only variant produced 14/25 in this run, describing that value as noise rather than a reliable effect of Fix A.
+- Unsupported claims that an agent knew about the party when the party was not in its memory were 0 in all compared variants.
+- Party knowledge remained at 76% across the compared variants.
+- Six agents still missed the party despite having it in memory; five of the eleven agents whose memories contained Sam Moore's campaign also answered that they did not know.
 
-### Retrieval test and interpretation
+The report's interpretation is that these missed answers were not caused by retrieval: in the tested variants, the relevant memories were retrieved near the top (rank 1–2). It points instead to how the interview answer is formed from the agent's own plans.
 
-In the saved-memory recall test, Fix D converted conversations into separate fact memories. For the exact party time (“5 pm”), the relevant memory's rank improved from 29 to 2 in the illustrated case. The report cautions that only two agents had that fact, so this is an example of the mechanism working, not a statistically strong result. For the party and election topics, retrieval was already near the top of the list without the fixes.
+### Retrieval findings
 
-The report's cost accounting for these specific experiments was **$3.22 total**: $2.93 for the 12-hour simulation (including evaluation calls), $0.14 for the five-version recall test, and $0.15 for the answer test. This is a historical result for that run and configuration, not a promise of future API cost.
+The saved-memory recall test found that Fix D made a specific party-time detail easier to retrieve. In the illustrated example, the “5 pm” fact was buried at rank 29 inside a whole-conversation memory and appeared at rank 2 after the conversation was split into fact memories. The report explicitly cautions that only two agents had that fact, so this is an example of the mechanism, not a statistically strong result.
 
-**Takeaway:** the strongest measured improvement in these tests came from Fix C's claim-level fact-checking. Fix D demonstrated a useful way to preserve details from conversations for later retrieval. Fix A and Fix B address identifiable retrieval weaknesses, but their benefit depends on the questions and memories being tested. The report also shows that missed answers remain an open problem.
+For the party and election topics, relevant memories were generally already near the top without the fixes. The report therefore does not claim that Fixes A–D improved every retrieval measure.
+
+### Cost recorded in the report
+
+For these specific experiments, the report records **$3.22 total**: $2.93 for the 12-hour simulation (including evaluation calls), $0.14 for the five-version recall test, and $0.15 for the five-version answer test. This is a historical cost for that run and configuration, not a prediction of future API costs.
+
+**Takeaway:** Fix C showed the clearest reduction in unsupported claims in the reported tests. Fix D demonstrated how storing individual conversation facts can improve retrieval of details that a summary buries. Fix A and Fix B target identifiable retrieval weaknesses, but their measured impact depended on the test. Missed answers remained an open problem even when relevant memories were retrieved.
 
 ## Screenshots
 
