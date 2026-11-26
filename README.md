@@ -201,6 +201,40 @@ The original project is licensed under Apache-2.0. Refer to [NOTICE](NOTICE) and
 ## Project status
 
 Academic project developed as part of SENG 5080. Implementation details and experimental memory changes are documented in this repository.
+
+## Experimental results (artifact report, November 24–25, 2026)
+
+The accompanying Smallville memory-fix report records two kinds of tests: a live interview test using the same starting memories, and a 12-game-hour simulation followed by recall and answer checks. These are project-specific experiments, not universal performance guarantees.
+
+### Live interview test — November 24
+
+All 25 agents were interviewed using the same starting memories. The report compares the authors' code with successive memory changes:
+
+| Measure | Authors' code | +A | +A+B | +A+B+C |
+| --- | ---: | ---: | ---: | ---: |
+| Claims to know the party, although it is not in the agent's memory | 8/25 | 13/25 | 13/25 | 1/25 |
+| Claims to know “Kane Martinez,” a person who does not exist in the test | 6/25 | 4/25 | 4/25 | 1/25 |
+| Host Isabella's true party knowledge retained | 1/1 | 1/1 | 1/1 | 1/1 |
+| Agents correctly knowing the mayor election | 2 | 3 | 3 | 3 |
+
+In this test, Fix C (fact-checking generated claims against retrieved memories) produced the clearest reduction in unsupported answers. The report notes that Fix A did not improve these interview answers in this particular test, and Fix B did not produce a measurable change because the questions already contained the relevant names.
+
+### 12-game-hour test — November 25
+
+A further test used the authors' simulation for 12 game hours, producing 482 conversations across the 25 agents. The report's answer test found that Fix C reduced:
+- Unsupported claims about the party from 6 to 2.
+- Claims of knowing the nonexistent Kane Martinez from 14 to 2.
+
+The report also identifies remaining limitations: six agents had the party in memory but still answered that they did not know about it. The four fixes did not solve this missed-answer behavior; the report attributes it to how answers are written from the agent's own plans rather than simply to memory retrieval.
+
+### Retrieval test and interpretation
+
+In the saved-memory recall test, Fix D converted conversations into separate fact memories. For the exact party time (“5 pm”), the relevant memory's rank improved from 29 to 2 in the illustrated case. The report cautions that only two agents had that fact, so this is an example of the mechanism working, not a statistically strong result. For the party and election topics, retrieval was already near the top of the list without the fixes.
+
+The report's cost accounting for these specific experiments was **$3.22 total**: $2.93 for the 12-hour simulation (including evaluation calls), $0.14 for the five-version recall test, and $0.15 for the answer test. This is a historical result for that run and configuration, not a promise of future API cost.
+
+**Takeaway:** the strongest measured improvement in these tests came from Fix C's claim-level fact-checking. Fix D demonstrated a useful way to preserve details from conversations for later retrieval. Fix A and Fix B address identifiable retrieval weaknesses, but their benefit depends on the questions and memories being tested. The report also shows that missed answers remain an open problem.
+
 ## Screenshots
 
 The following screenshots were captured from the local practice/mock replay viewer.
